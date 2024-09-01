@@ -1,0 +1,20 @@
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class ClienteNaoEncontradoException extends RuntimeException {
+    public ClienteNaoEncontradoException(Long id) {
+        super("Cliente não encontrado: " + id);
+    }
+}
+
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class SaldoInsuficienteException extends RuntimeException {
+    public SaldoInsuficienteException(String mensagem) {
+        super(mensagem);
+    }
+}
+
+@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+public class CallbackException extends RuntimeException {
+    public CallbackException(String mensagem, Throwable causa) {
+        super(mensagem, causa);
+    }
+}
